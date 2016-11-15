@@ -1,3 +1,20 @@
-#footer {
+@import "../../style/variables";
 
+#footer {
+  .colors {
+    margin: 10px auto;
+
+    span {
+      display: inline-block;
+      float: left;
+      width: 32px;
+      height: 8px;
+
+      &.C_Black { background: @C_Black }
+      &.C_DarkGrey { background: @C_DarkGrey }
+      &.C_LightGrey { background: @C_LightGrey }
+      &.C_DarkPrimary { background: @C_DarkPrimary }
+      &.C_Primary { background: @C_Primary }
+    }
+  }
 }
