@@ -1,0 +1,15 @@
+<Template name="LayoutMain">
+  <div id="layout-main">
+    <header>
+      Header
+    </header>
+
+    <section id="page">
+      <div class="page-content">
+        {{> Template.dynamic template=getPageTemplate}}
+      </div>
+    </section>
+
+    {{> Footer}}
+  </div>
+</Template>
