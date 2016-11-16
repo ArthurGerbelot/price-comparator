@@ -1,2 +1,111 @@
+@import "../style/variables.import.less";
+
 #layout-main {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 100%;
+
+  overflow: hidden; /* footer when bottom: -3em */
+
+  & > header {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    font-size: 1.4em;
+    line-height: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+
+    text-shadow: 0px 2px 6px rgba(0,0,0, .75);
+    background: linear-gradient(#424247, #2C2D30);
+    box-shadow: 0 0 6px rgba(0,0,0,1);
+  }
+
+  #layout-content {
+    position: absolute;
+    top: 3em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    & > nav {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 3.4em;
+      background: #1E1E20;
+
+      & > a {
+        display: block;
+        height: 3.4em;
+        line-height: 3.4em;
+        text-align: center;
+        margin-right: 2px;
+
+        background: #35373F;
+        border-top: 1px solid #484A53;
+        border-bottom: 1px solid #2F3038;
+        cursor: pointer;
+
+        transition: all .5s;
+
+        i {
+          transition: all .5s;
+          color: #62626A;
+          font-size: 1.4rem;
+          line-height: 3.4rem;
+        }
+        &.active {
+          background: #1E1E20;
+          border-color: #1E1E20;
+          margin-right: 0;
+          i {
+            color: @C_Primary;
+          }
+        };
+      }
+    }
+    #page {
+      position: absolute;
+      top: 0;
+      left: 3.4em;
+      right: 0;
+      bottom: 3em;
+      overflow-y: auto;
+    }
+  }
+
+
+  & > footer {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3em;
+
+    text-shadow: 0px 2px 6px rgba(0,0,0, .75);
+    background: linear-gradient(#424247, #2C2D30);
+    box-shadow: 2px 0 4px rgba(0,0,0, 1);
+
+    transition: bottom .5s;
+  }
+
+  &.footer-hidden {
+
+    footer {
+      bottom: -3em;
+    }
+  }
 }

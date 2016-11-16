@@ -1,15 +1,21 @@
 <Template name="LayoutMain">
-  <div id="layout-main">
-    <header>
-      Header
-    </header>
+  <div id="layout-main" class="{{getLayoutClasses}}">
+    <header>Price Comparator</header>
 
-    <section id="page">
-      <div class="page-content">
-        {{> Template.dynamic template=getPageTemplate}}
-      </div>
-    </section>
+    <div id="layout-content">
+      <nav>
+        <a href="{{pathFor 'App.compare.solid'}}" class="{{getNavClass 'App.compare.solid'}}"><i class="fa fa-balance-scale"></i></a>
+        <a href="{{pathFor 'App.compare.liquid'}}" class="{{getNavClass 'App.compare.liquid'}}"><i class="fa fa-tint"></i></a>
+        <a href="{{pathFor 'App.settings'}}" class="{{getNavClass 'App.settings'}}"><i class="fa fa-cog"></i></a>
+        <a href="{{pathFor 'App.share'}}" class="{{getNavClass 'App.share'}}"><i class="fa fa-share-alt"></i></a>
+      </nav>
 
-    {{> Footer}}
+      <section id="page">
+        <div class="page-content">
+          {{> Template.dynamic template=getPageTemplate data=getPageData}}
+        </div>
+      </section>
+    </div>
+    {{> Footer getFooterData}}
   </div>
 </Template>
